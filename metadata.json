@@ -1,0 +1,6 @@
+{
+  "name": "ប្រព័ន្ធគ្រប់គ្រងការិយាល័យទិដ្ឋាការចូល",
+  "description": "ប្រព័ន្ធគ្រប់គ្រងការិយាល័យទិដ្ឋាការចូល (Entry Visa Office Management System)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

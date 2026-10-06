@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: visa-management
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: PORT
+        value: 3000

@@ -1,0 +1,786 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Khmer OS Siemreap';
+  src: local('Khmer OS Siemreap'), local('KhmerOSsiemreap'), local('KhmerOSSiemreap'), url('/fonts/KhmerOS_siemreap.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Siemreap';
+  src: local('Khmer OS Siemreap'), local('KhmerOSsiemreap'), url('/fonts/KhmerOS_siemreap.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Khmer Mool1';
+  src: local('Khmer Mool1'), local('Khmer Mool 1'), local('Khmer OS Muol Light'), local('Khmer OS Mool1'), local('KhmerOSmuollight'), url('/fonts/KhmerOS_muollight.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Khmer Mool 1';
+  src: local('Khmer Mool 1'), local('Khmer Mool1'), local('Khmer OS Muol Light'), local('Khmer OS Mool1'), local('KhmerOSmuollight'), url('/fonts/KhmerOS_muollight.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Khmer OS Mool1';
+  src: local('Khmer OS Mool1'), local('Khmer Mool1'), local('Khmer OS Muol Light'), local('KhmerOSmuollight'), url('/fonts/KhmerOS_muollight.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Khmer OS Muol Light';
+  src: local('Khmer OS Muol Light'), local('KhmerOSmuollight'), local('Khmer Mool1'), url('/fonts/KhmerOS_muollight.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Khmer OS Muol';
+  src: local('Khmer OS Muol'), local('KhmerOSmuol'), url('/fonts/KhmerOS_muol.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moul';
+  src: local('Khmer OS Muol Light'), local('Khmer Mool1'), local('Khmer OS Muol'), url('/fonts/KhmerOS_muollight.ttf') format('truetype');
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Khmer OS Siemreap', 'Siemreap', sans-serif;
+  --font-display: 'Khmer Mool1', 'Khmer Mool 1', 'Khmer Mool', 'Khmer OS Muol Light', 'Khmer OS Mool1', 'Moul', serif;
+  --font-kantumruy: 'Khmer OS Siemreap', 'Siemreap', sans-serif;
+  --font-siemreap: 'Khmer OS Siemreap', 'Siemreap', sans-serif;
+  --font-moul: 'Khmer Mool1', 'Khmer Mool 1', 'Khmer Mool', 'Khmer OS Muol Light', 'Khmer OS Mool1', 'Moul', serif;
+  --font-times: 'Times New Roman', Times, serif;
+}
+
+@layer base {
+  *, ::before, ::after {
+    font-family: 'Kantumruy Pro', 'Siemreap', 'Battambang', system-ui, -apple-system, sans-serif;
+  }
+  input, button, select, textarea, optgroup {
+    font-family: 'Kantumruy Pro', 'Siemreap', 'Battambang', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Force ONLY Khmer OS Siemreap and Khmer OS Mool1 in official PDF document previews & prints */
+#official-pdf-document,
+#official-pdf-document *,
+#official-pdf-report-document,
+#official-pdf-report-document *,
+#official-pdf-robok-document,
+#official-pdf-robok-document *,
+#robok-total-stock-work-pdf,
+#robok-total-stock-work-pdf *,
+#official-pdf-single-team-document,
+#official-pdf-single-team-document *,
+#sticker-office-stock-report-pdf,
+#sticker-office-stock-report-pdf *,
+#sticker-status-print-document,
+#sticker-status-print-document *,
+#sticker-team-stock-report-pdf,
+#sticker-team-stock-report-pdf *,
+#yearly-team-distribution-print-area,
+#yearly-team-distribution-print-area *,
+#yearly-team-usage-print-area,
+#yearly-team-usage-print-area *,
+#yearly-k2-received-k1-print-area,
+#yearly-k2-received-k1-print-area *,
+#yearly-k2-issued-teams-print-area,
+#yearly-k2-issued-teams-print-area *,
+#daily-team-statistics-report-pdf,
+#daily-team-statistics-report-pdf *,
+#daily-sticker-visa-operation-report-pdf,
+#daily-sticker-visa-operation-report-pdf * {
+  font-family: 'Khmer OS Siemreap', 'Siemreap', sans-serif !important;
+  letter-spacing: 0px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: geometricPrecision !important;
+}
+
+#official-pdf-document .font-siemreap,
+#official-pdf-document .font-siemreap *,
+#official-pdf-report-document .font-siemreap,
+#official-pdf-report-document .font-siemreap *,
+#official-pdf-robok-document .font-siemreap,
+#official-pdf-robok-document .font-siemreap *,
+#robok-total-stock-work-pdf .font-siemreap,
+#robok-total-stock-work-pdf .font-siemreap *,
+#official-pdf-single-team-document .font-siemreap,
+#official-pdf-single-team-document .font-siemreap *,
+#sticker-office-stock-report-pdf .font-siemreap,
+#sticker-office-stock-report-pdf .font-siemreap *,
+#sticker-team-stock-report-pdf .font-siemreap,
+#sticker-team-stock-report-pdf .font-siemreap *,
+#yearly-team-distribution-print-area .font-siemreap,
+#yearly-team-distribution-print-area .font-siemreap *,
+#yearly-team-usage-print-area .font-siemreap,
+#yearly-team-usage-print-area .font-siemreap *,
+#yearly-k2-received-k1-print-area .font-siemreap,
+#yearly-k2-received-k1-print-area .font-siemreap *,
+#yearly-k2-issued-teams-print-area .font-siemreap,
+#yearly-k2-issued-teams-print-area .font-siemreap *,
+#daily-team-statistics-report-pdf .font-siemreap,
+#daily-team-statistics-report-pdf .font-siemreap *,
+#team-visa-issuance-stats-report-pdf,
+#team-visa-issuance-stats-report-pdf *,
+#team-visa-issuance-stats-report-pdf .font-siemreap,
+#team-visa-issuance-stats-report-pdf .font-siemreap * {
+  font-family: 'Khmer OS Siemreap', 'Siemreap', sans-serif !important;
+  letter-spacing: 0px !important;
+}
+
+#official-pdf-document .font-moul,
+#official-pdf-document .font-moul *,
+#official-pdf-report-document .font-moul,
+#official-pdf-report-document .font-moul *,
+#official-pdf-robok-document .font-moul,
+#official-pdf-robok-document .font-moul *,
+#robok-total-stock-work-pdf .font-moul,
+#robok-total-stock-work-pdf .font-moul *,
+#official-pdf-single-team-document .font-moul,
+#official-pdf-single-team-document .font-moul *,
+#sticker-office-stock-report-pdf .font-moul,
+#sticker-office-stock-report-pdf .font-moul *,
+#sticker-status-print-document .font-moul,
+#sticker-status-print-document .font-moul *,
+#sticker-team-stock-report-pdf .font-moul,
+#sticker-team-stock-report-pdf .font-moul *,
+#yearly-team-distribution-print-area .font-moul,
+#yearly-team-distribution-print-area .font-moul *,
+#yearly-team-usage-print-area .font-moul,
+#yearly-team-usage-print-area .font-moul *,
+#yearly-k2-received-k1-print-area .font-moul,
+#yearly-k2-received-k1-print-area .font-moul *,
+#yearly-k2-issued-teams-print-area .font-moul,
+#yearly-k2-issued-teams-print-area .font-moul *,
+#daily-team-statistics-report-pdf .font-moul,
+#daily-team-statistics-report-pdf .font-moul *,
+#daily-sticker-visa-operation-report-pdf .font-moul,
+#daily-sticker-visa-operation-report-pdf .font-moul *,
+#team-visa-issuance-stats-report-pdf .font-moul,
+#team-visa-issuance-stats-report-pdf .font-moul *,
+.font-moul,
+.font-moul *,
+.font-moul1,
+.font-moul1 *,
+.font-muol,
+.font-muol *,
+[class*="font-moul"],
+[class*="font-moul"] *,
+input.font-moul,
+select.font-moul,
+option.font-moul,
+h1.font-moul,
+h2.font-moul,
+h3.font-moul {
+  font-family: 'Khmer Mool1', 'Khmer Mool 1', 'Khmer Mool', 'Khmer OS Muol Light', 'Khmer OS Mool1', 'Khmer OS Muol', 'Moul', serif !important;
+  font-weight: normal !important;
+  letter-spacing: 0px !important;
+  line-height: 1.45 !important;
+}
+
+/* Crisp Typography & Tabular Numbers */
+#robok-total-stock-work-pdf .font-times,
+#robok-total-stock-work-pdf .font-times *,
+#official-pdf-robok-document .font-times,
+#official-pdf-robok-document .font-times *,
+#official-pdf-document .font-times,
+#official-pdf-document .font-times *,
+#official-pdf-report-document .font-times,
+#official-pdf-report-document .font-times *,
+#official-pdf-robok-document .font-times,
+#official-pdf-robok-document .font-times *,
+#robok-total-stock-work-pdf .font-times,
+#robok-total-stock-work-pdf .font-times *,
+#official-pdf-single-team-document .font-times,
+#official-pdf-single-team-document .font-times *,
+#sticker-team-stock-report-pdf .font-times,
+#sticker-team-stock-report-pdf .font-times *,
+#sticker-office-stock-report-pdf .font-times,
+#sticker-office-stock-report-pdf .font-times *,
+#yearly-team-distribution-print-area .font-times,
+#yearly-team-distribution-print-area .font-times *,
+#yearly-team-usage-print-area .font-times,
+#yearly-team-usage-print-area .font-times *,
+#yearly-k2-received-k1-print-area .font-times,
+#yearly-k2-received-k1-print-area .font-times *,
+#yearly-k2-issued-teams-print-area .font-times,
+#yearly-k2-issued-teams-print-area .font-times *,
+#team-visa-issuance-stats-report-pdf .font-times,
+#team-visa-issuance-stats-report-pdf .font-times *,
+#team-visa-issuance-stats-report-pdf span.font-times,
+#team-visa-issuance-stats-report-pdf div.font-times,
+#team-visa-issuance-stats-report-pdf input.font-times,
+#team-visa-issuance-stats-report-pdf .font-siemreap .font-times,
+#team-visa-issuance-stats-report-pdf .font-moul .font-times,
+button.font-times,
+button.font-times *,
+input.font-times,
+select.font-times,
+textarea.font-times,
+.font-times button,
+.font-times input,
+.font-times select,
+.font-times textarea,
+.font-times span,
+.font-times div,
+td.font-times,
+th.font-times,
+.font-times,
+.font-times * {
+  font-family: 'Times New Roman', Times, serif !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* Crisp, Clean Table Spacing Without Overlapping Borders */
+#official-pdf-document table,
+#official-pdf-report-document table,
+#official-pdf-robok-document table,
+#robok-total-stock-work-pdf table,
+#official-pdf-single-team-document table,
+#sticker-office-stock-report-pdf table,
+#sticker-team-stock-report-pdf table,
+#yearly-team-distribution-print-area table,
+#yearly-team-usage-print-area table,
+#yearly-k2-received-k1-print-area table,
+#yearly-k2-issued-teams-print-area table {
+  margin-top: 1px !important;
+  margin-bottom: 2px !important;
+  border-collapse: collapse !important;
+  text-rendering: geometricPrecision !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+#official-pdf-document table th,
+#official-pdf-report-document table th,
+#official-pdf-robok-document table th,
+#robok-total-stock-work-pdf table th,
+#official-pdf-single-team-document table th,
+#sticker-office-stock-report-pdf table th,
+#sticker-team-stock-report-pdf table th,
+#yearly-team-distribution-print-area table th {
+  padding-top: 1.5px !important;
+  padding-bottom: 1.5px !important;
+  padding-left: 1.5px !important;
+  padding-right: 1.5px !important;
+  line-height: 1.25 !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+}
+
+#official-pdf-document table td,
+#official-pdf-report-document table td,
+#official-pdf-robok-document table td,
+#robok-total-stock-work-pdf table td,
+#official-pdf-single-team-document table td,
+#sticker-office-stock-report-pdf table td,
+#sticker-team-stock-report-pdf table td,
+#yearly-team-distribution-print-area table td {
+  padding-top: 1.5px !important;
+  padding-bottom: 1.5px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  line-height: 1.25 !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+}
+
+/* Perfect Middle Alignment & Line-Height for Tables */
+table th,
+table td {
+  vertical-align: middle !important;
+}
+
+/* Compact Table Row Height for Reports (ពង្រួមជួរដេក) */
+#yearly-k2-received-k1-print-area table tbody tr,
+#yearly-k2-issued-teams-print-area table tbody tr,
+#yearly-team-distribution-print-area table tbody tr,
+#yearly-team-usage-print-area table tbody tr {
+  height: 20px !important;
+  max-height: 20px !important;
+}
+
+#yearly-k2-received-k1-print-area table tbody td,
+#yearly-k2-issued-teams-print-area table tbody td,
+#yearly-team-distribution-print-area table tbody td,
+#yearly-team-usage-print-area table tbody td {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  line-height: 1.15 !important;
+}
+
+@layer utilities {
+  .font-moul {
+    font-family: 'Khmer Mool1', 'Khmer Mool 1', 'Khmer Mool', 'Khmer OS Mool1', 'Moul', 'Khmer OS Muol Light', serif !important;
+    font-weight: normal !important;
+  }
+  .font-siemreap {
+    font-family: 'Khmer OS Siemreap', 'Siemreap', sans-serif !important;
+  }
+  .font-times {
+    font-family: 'Times New Roman', 'Times', serif !important;
+  }
+  .font-display {
+    font-family: 'Khmer Mool1', 'Khmer Mool 1', 'Khmer Mool', 'Khmer OS Mool1', 'Moul', serif;
+  }
+  .font-body {
+    font-family: 'Khmer OS Siemreap', 'Siemreap', sans-serif;
+  }
+  .font-kantumruy {
+    font-family: 'Khmer OS Siemreap', 'Siemreap', sans-serif;
+  }
+  .font-passport {
+    font-family: 'Roboto Mono', ui-monospace, monospace;
+    letter-spacing: 0.05em;
+  }
+}
+
+:root {
+  --primary-50: #eef6ff;
+  --primary-100: #d9eaff;
+  --primary-200: #bcdaff;
+  --primary-300: #8ec2ff;
+  --primary-400: #59a3ff;
+  --primary-500: #3380fd;
+  --primary-600: #1d63f1;
+  --primary-700: #1551de;
+  --primary-800: #1842b6;
+  --primary-900: #1a3c90;
+
+  --accent-50: #ecfdf5;
+  --accent-100: #d1fae5;
+  --accent-200: #a7f3d0;
+  --accent-300: #6ee7b7;
+  --accent-400: #34d399;
+  --accent-500: #10b981;
+  --accent-600: #059669;
+  --accent-700: #047857;
+
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-400: #fbbf24;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+
+  --error-50: #fef2f2;
+  --error-100: #fee2e2;
+  --error-400: #f87171;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+
+  --neutral-0: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+}
+
+body {
+  font-family: 'Kantumruy Pro', sans-serif;
+  background-color: #f4f6f9;
+  color: #1F2937;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #e9ecef;
+}
+::-webkit-scrollbar-thumb {
+  background: #ced4da;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
+/* Custom UI Components from design token styles */
+.stat-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.stat-icon.blue { background: var(--primary-100); color: var(--primary-600); }
+.stat-icon.green { background: var(--accent-100); color: var(--accent-600); }
+.stat-icon.amber { background: var(--warning-100); color: var(--warning-600); }
+.stat-icon.red { background: var(--error-100); color: var(--error-600); }
+
+.badge-blue { background: var(--primary-100); color: var(--primary-700); }
+.badge-green { background: var(--accent-100); color: var(--accent-700); }
+.badge-amber { background: var(--warning-100); color: var(--warning-600); }
+.badge-red { background: var(--error-100); color: var(--error-600); }
+.badge-neutral { background: var(--neutral-100); color: var(--neutral-600); }
+
+.batch-info {
+  background: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--primary-800);
+}
+
+.person-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 1fr 120px 100px 110px 120px 40px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+@media (max-width: 768px) {
+  .person-row {
+    grid-template-columns: 28px 1fr 1fr 36px;
+  }
+}
+
+/* Print & PDF styling */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+    min-width: 210mm !important;
+    height: auto !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Reset outer preview scaling wrappers during print so A4 sheets print at true physical dimensions */
+  .overflow-x-auto,
+  [data-print-wrapper] {
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Visible printable report documents and tables */
+  #official-pdf-document,
+  #official-pdf-document *,
+  #official-pdf-report-document,
+  #official-pdf-report-document *,
+  #official-pdf-robok-document,
+  #official-pdf-robok-document *,
+  #official-pdf-single-team-document,
+  #official-pdf-single-team-document *,
+  #sticker-office-stock-report-pdf,
+  #sticker-office-stock-report-pdf *,
+  #sticker-team-stock-report-pdf,
+  #sticker-team-stock-report-pdf *,
+  #robok-total-stock-work-pdf,
+  #robok-total-stock-work-pdf *,
+  #daily-team-statistics-report-pdf,
+  #daily-team-statistics-report-pdf *,
+  #team-visa-issuance-stats-report-pdf,
+  #team-visa-issuance-stats-report-pdf *,
+  #yearly-k2-received-k1-print-area,
+  #yearly-k2-received-k1-print-area *,
+  #yearly-k2-issued-teams-print-area,
+  #yearly-k2-issued-teams-print-area *,
+  #yearly-team-distribution-print-area,
+  #yearly-team-distribution-print-area *,
+  #visa-list-print-table,
+  #visa-list-print-table *,
+  #visa-date-search-print-table,
+  #visa-date-search-print-table *,
+  #stock-manager-print-table,
+  #stock-manager-print-table *,
+  #damaged-missing-checklist-print-area,
+  #damaged-missing-checklist-print-area *,
+  #received-k2-checklist-print-area,
+  #received-k2-checklist-print-area *,
+  .printable-report-page,
+  .printable-report-page *,
+  .printable-a4-area,
+  .printable-a4-area *,
+  .direct-print-target,
+  .direct-print-target * {
+    visibility: visible !important;
+  }
+
+  #team-visa-issuance-stats-report-pdf {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    padding-top: 1.0cm !important;
+    padding-bottom: 0.5cm !important;
+    padding-left: 2.8cm !important;
+    padding-right: 1.3cm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+  }
+
+  #daily-team-statistics-report-pdf {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    padding-top: 1.0cm !important;
+    padding-bottom: 0.5cm !important;
+    padding-left: 2.8cm !important;
+    padding-right: 1.3cm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+  }
+
+  #robok-total-stock-work-pdf {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+    zoom: var(--robok-print-scale, 0.97) !important;
+  }
+
+  @supports not (zoom: 1) {
+    #robok-total-stock-work-pdf {
+      transform: scale(var(--robok-print-scale, 0.97)) !important;
+      transform-origin: top center !important;
+    }
+  }
+
+  #official-pdf-document,
+  #official-pdf-report-document,
+  #official-pdf-robok-document,
+  #official-pdf-single-team-document {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    padding-top: 1.0cm !important;
+    padding-left: 2.5cm !important;
+    padding-right: 1.8cm !important;
+    padding-bottom: 0.5cm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+  }
+
+  #sticker-team-stock-report-pdf,
+  .printable-report-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    padding-top: 1.0cm !important;
+    padding-left: 3.0cm !important;
+    padding-right: 1.0cm !important;
+    padding-bottom: 0.5cm !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important;
+    overflow: visible !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  #sticker-office-stock-report-pdf,
+  #yearly-k2-received-k1-print-area,
+  #yearly-k2-issued-teams-print-area,
+  #yearly-team-distribution-print-area {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 297mm !important;
+    min-height: 210mm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+  }
+
+  #visa-list-print-table,
+  #visa-date-search-print-table,
+  #stock-manager-print-table,
+  #damaged-missing-checklist-print-area,
+  #received-k2-checklist-print-area {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 297mm !important;
+    max-width: 297mm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #ffffff !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+  }
+
+  .print\:hidden,
+  aside,
+  header,
+  nav,
+  button {
+    display: none !important;
+  }
+
+  html, body, #root, .app-layout-container, .app-main-content-scroll {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+}
+
+.font-moul {
+  font-family: 'Khmer Mool1', 'Khmer OS Mool1', 'Khmer OS Muol Light', 'Khmer OS Moul Light', 'Khmer OS Muol', 'Moul', serif;
+  font-weight: normal !important;
+}
+
+.font-siemreap {
+  font-family: 'Khmer OS Siemreap', 'Siemreap', sans-serif;
+}
+
+.font-tacteing {
+  font-family: 'Tacteing', 'Khmer OS Tacteing', serif;
+}
+
+.font-times {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* ==========================================================================
+   Independent Scrolling Styles (Sidebar & Main Content)
+   ========================================================================== */
+
+/* Contain overscroll so scrolling sidebar never chains or moves main content */
+.custom-sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(198, 161, 91, 0.35) transparent;
+  overscroll-behavior: contain;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(198, 161, 91, 0.25);
+  border-radius: 9999px;
+}
+
+.custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(198, 161, 91, 0.55);
+}
+
+/* Contain overscroll on main content so scrolling main content is smooth & independent */
+.custom-main-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(11, 37, 69, 0.25) transparent;
+  overscroll-behavior: contain;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+.custom-main-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-main-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.custom-main-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(11, 37, 69, 0.2);
+  border-radius: 9999px;
+}
+
+.custom-main-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(11, 37, 69, 0.45);
+}
+
+
